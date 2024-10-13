@@ -47,8 +47,10 @@ struct AboutView: View {
                         .foregroundStyle(.white)
                     }
                 }
-                .padding(.horizontal, 16)
+                // .padding(.horizontal, 16)
+                .contentMargins(.horizontal, 16, for: .scrollContent)
             }
+            .contentMargins([.bottom, .horizontal], 16, for:.scrollContent)
             .navigationTitle("How it works")
         }
     }

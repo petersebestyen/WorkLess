@@ -54,7 +54,8 @@ struct AddActivityView: View {
                         }
                     }
                 }
-                .padding(.horizontal, 16)
+                // .padding(.horizontal, 16)
+                .contentMargins(.horizontal, 16, for: .scrollContent)
                 .scrollTargetLayout()
             }
             .navigationTitle("Add Activity")
