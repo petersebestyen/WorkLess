@@ -56,4 +56,5 @@ struct AboutView: View {
 
 #Preview {
     AboutView()
+        .environmentObject(DataController())
 }

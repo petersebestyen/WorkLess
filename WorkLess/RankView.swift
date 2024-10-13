@@ -27,4 +27,5 @@ struct RankView: View {
 
 #Preview {
     RankView()
+        .environmentObject(DataController())
 }

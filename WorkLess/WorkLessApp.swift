@@ -27,3 +27,18 @@ struct WorkLessApp: App {
         }
     }
 }
+
+#Preview {
+        TabView {
+            ContentView()
+                .tabItem {
+                    Label("Activities", systemImage: "figure.play")
+                }
+
+            AboutView()
+                .tabItem {
+                    Label("How it Works", systemImage: "questionmark.circle")
+                }
+        }
+        .environmentObject(DataController())
+}

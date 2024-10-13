@@ -39,4 +39,7 @@ struct ActivityProgressView: View {
     }
 }
 
-
+#Preview {
+    ActivityProgressView(item: .init(id: "SwiftUI"))
+        .environmentObject(DataController())
+}
