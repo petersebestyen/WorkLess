@@ -18,10 +18,26 @@ struct ContentView: View {
                 }
 
                 Section("Your Progress") {
-                    ForEach(dataController.activityProgress) { item in
-                        ActivityProgressView(item: item)
+                    if dataController.activityProgress.isEmpty {
+                        ContentUnavailableView {
+                            Label("No activities yet.", systemImage: "figure.run")
+                        } description: {
+                            Text("To Work Less, start by adding a new activity to try!")
+                        } actions: {
+                            Button {
+                                showingAddActivity.toggle()
+                            } label: {
+                                Label("Add a new activity", systemImage: "plus")
+                            }
+                            .buttonStyle(.borderedProminent)
+                            .foregroundStyle(.white)
+                        }
+                    } else {
+                        ForEach(dataController.activityProgress) { item in
+                            ActivityProgressView(item: item)
+                        }
+                        .onDelete(perform: deleteProgress)
                     }
-                    .onDelete(perform: deleteProgress)
                 }
             }
             .navigationTitle("Work Less")
