@@ -55,11 +55,13 @@ struct AddActivityView: View {
                     }
                 }
                 .padding(.horizontal, 16)
+                .scrollTargetLayout()
             }
             .navigationTitle("Add Activity")
             .onAppear {
                 unusedActivities = dataController.unusedActivities
             }
+            .scrollTargetBehavior(.viewAligned)
         }
     }
 }
