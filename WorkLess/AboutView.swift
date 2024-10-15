@@ -49,6 +49,12 @@ struct AboutView: View {
                 }
                 // .padding(.horizontal, 16)
                 .contentMargins(.horizontal, 16, for: .scrollContent)
+                .scrollTransition(.interactive.threshold(.visible(0.25))) { content, phase in
+                    content
+                        .scaleEffect(phase == .bottomTrailing ? 0.9 : 1)
+                        // .blur(radius: phase == .bottomTrailing ? 3 : 0)
+                    
+                }
             }
             .contentMargins([.bottom, .horizontal], 16, for:.scrollContent)
             .navigationTitle("How it works")

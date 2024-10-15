@@ -51,6 +51,11 @@ struct AddActivityView: View {
                                 .background(.blue.gradient)
                                 .clipShape(RoundedRectangle(cornerRadius: 25))
                                 .containerRelativeFrame(.horizontal)
+                                .scrollTransition { content, phase in
+                                    content
+                                        .offset(y: phase == .identity ? 0 : 30)
+                                        .saturation(phase == .identity ? 1.0 : 0.5)
+                                }
                             }
                         }
                     }
@@ -59,6 +64,7 @@ struct AddActivityView: View {
                 .fixedSize()
                 .scrollTargetLayout()
                 .contentMargins(.horizontal, 16, for: .scrollContent)
+                .scrollClipDisabled(true)
             }
             .navigationTitle("Add Activity")
             .onAppear {
