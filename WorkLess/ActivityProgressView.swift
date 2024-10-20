@@ -35,6 +35,7 @@ struct ActivityProgressView: View {
             .disabled(item.isComplete)
             .buttonStyle(.bordered)
             .clipShape(Circle())
+            .sensoryFeedback(item.isComplete ? .success : .increase, trigger: item.level)
         }
     }
 }
