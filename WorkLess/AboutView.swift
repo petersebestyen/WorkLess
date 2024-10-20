@@ -47,7 +47,7 @@ struct AboutView: View {
                         .foregroundStyle(.white)
                         .visualEffect{ content, proxy in
                             content
-                                .hueRotation(-.degrees(proxy.frame(in: .global). minY / 30))
+                                .hueRotation(-.degrees(proxy.frame(in: .global).minY / 30))
                         }
                     }
                 }
