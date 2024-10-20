@@ -13,6 +13,10 @@ struct RankView: View {
         Image(dataController.rankImage)
             .resizable()
             .scaledToFit()
+            .phaseAnimator([false, true], trigger: dataController.rankImage) { content, phase in
+                content
+                    .scaleEffect(phase ? 1.2 : 1)
+            }
             .padding(60)
             .overlay(
                 Circle()
