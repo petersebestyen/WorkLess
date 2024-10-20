@@ -36,6 +36,7 @@ struct ActivityProgressView: View {
             .buttonStyle(.bordered)
             .clipShape(Circle())
             .sensoryFeedback(item.isComplete ? .success : .increase, trigger: item.level)
+            .symbolEffect(.bounce, value: item.level)
         }
     }
 }
