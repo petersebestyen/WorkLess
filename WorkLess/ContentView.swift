@@ -51,6 +51,8 @@ struct ContentView: View {
             .sheet(isPresented: $showingAddActivity) {
                 AddActivityView()
             }
+            .scrollIndicatorsFlash(onAppear: true)
+            .scrollIndicatorsFlash(trigger: dataController.activityProgress.count)
         }
     }
 

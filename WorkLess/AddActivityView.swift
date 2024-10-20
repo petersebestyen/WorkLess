@@ -71,6 +71,7 @@ struct AddActivityView: View {
                 unusedActivities = dataController.unusedActivities
             }
             .scrollTargetBehavior(.viewAligned)
+            .scrollIndicatorsFlash(onAppear: true)
         }
     }
 }
