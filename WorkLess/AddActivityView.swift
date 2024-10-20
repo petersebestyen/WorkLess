@@ -49,7 +49,7 @@ struct AddActivityView: View {
                                 .padding(20)
                                 .frame(maxHeight: .infinity)
                                 .background(.blue.gradient)
-                                .clipShape(RoundedRectangle(cornerRadius: 25))
+                                .clipShape(.rect(cornerRadius: 25))
                                 .containerRelativeFrame(.horizontal)
                                 .scrollTransition { content, phase in
                                     content

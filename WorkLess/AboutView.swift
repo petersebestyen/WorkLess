@@ -43,7 +43,7 @@ struct AboutView: View {
                         .padding()
                         .frame(maxWidth: .infinity)
                         .background(.blue.gradient)
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                        .clipShape(.rect(cornerRadius: 20))
                         .foregroundStyle(.white)
                         .visualEffect{ content, proxy in
                             content

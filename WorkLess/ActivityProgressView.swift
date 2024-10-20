@@ -24,17 +24,14 @@ struct ActivityProgressView: View {
                     .tint(item.isComplete ? .green : .accentColor)
             }
 
-            Button {
+            Button(item.progressTitle, systemImage: item.progressIcon) {
                 withAnimation {
                     dataController.add(to: item)
                 }
-            } label: {
-                Label(item.progressTitle, systemImage: item.progressIcon)
-                    .labelStyle(.iconOnly)
             }
             .disabled(item.isComplete)
             .buttonStyle(.bordered)
-            .clipShape(Circle())
+            .clipShape(.circle)
             .sensoryFeedback(item.isComplete ? .success : .increase, trigger: item.level)
             .symbolEffect(.bounce, value: item.level)
         }

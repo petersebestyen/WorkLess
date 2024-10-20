@@ -42,10 +42,8 @@ struct ContentView: View {
             }
             .navigationTitle("Work Less")
             .toolbar {
-                Button {
+                Button("Add Activity", systemImage: "plus") {
                     showingAddActivity.toggle()
-                } label: {
-                    Label("Add Activity", systemImage: "plus")
                 }
             }
             .sheet(isPresented: $showingAddActivity) {
