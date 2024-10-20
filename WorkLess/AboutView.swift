@@ -45,6 +45,10 @@ struct AboutView: View {
                         .background(.blue.gradient)
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                         .foregroundStyle(.white)
+                        .visualEffect{ content, proxy in
+                            content
+                                .hueRotation(-.degrees(proxy.frame(in: .global). minY / 30))
+                        }
                     }
                 }
                 // .padding(.horizontal, 16)

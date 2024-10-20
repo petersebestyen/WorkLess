@@ -18,6 +18,10 @@ struct RankView: View {
                     .scaleEffect(phase ? 1.2 : 1)
             }
             .padding(60)
+            .visualEffect { content, proxy in
+                content
+                    .scaleEffect(min(1.2, max(1, proxy.frame(in: .global).minY / 200)))
+            }
             .overlay(
                 Circle()
                     .trim(from: 0.0, to: dataController.progressTowardsNextRank)
